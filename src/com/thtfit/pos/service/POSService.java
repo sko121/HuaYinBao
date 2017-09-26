@@ -48,8 +48,8 @@ import com.thtfit.pos.util.receiver.AlarmReceiver;
 
 public class POSService extends Service
 {
-	//http://121.15.134.44:8082/SmartPos//clients/clientsLogin.action?loginName=admin@admin&passWord=123456
-
+	//http://58.61.149.122:8082/SmartPos//clients/clientsLogin.action?loginName=admin@admin&passWord=123456
+	//http://192.168.70.66:2300/SmartPos/management/main
 	public static final String RECEIVE_DATA = "com.thtfit.pos.service.Receiver.action.Main.RECEIVE_DATA";
 	// 接收前台 请求
 	public static final String RECEIVE_REQUEST = "com.thtfit.pos.service.Receiver.action.Service.RECEIVE_REQUEST";
@@ -70,7 +70,7 @@ public class POSService extends Service
 	private static final int TAG_UPLOADALARM = 1;
 	// 启动定时获取位置任务
 	private static final int TAG_GPSALARM = 2;
-	// 启动推送接收服务
+// 启动推送接收服务
 	private static final int TAG_PUSH = 3;
 
 	private String TAG = POSService.class.getSimpleName();
@@ -93,9 +93,11 @@ public class POSService extends Service
 
 	public int connRetryCount = 0;
 
-	//private final static String serverAddress = "192.168.200.239:8080/SmartPos";
-	//private final static String serverAddress = "121.15.134.44:8020/SmartPos";
-	private final static String serverAddress = "121.15.134.44:8082/SmartPos";
+	private final static String serverAddress = "192.168.200.239:8080/SmartPos";
+	//private final static String serverAddress = "121.15.134.44:020/SmartPos"
+//	private final static String serverAddress = "58.61.149.122:8082/SmartPos";
+	//private final static String serverAddress = "192.168.70.66:8080/SmartPos";
+//	private final static String serverAddress = "http://192.168.70.66:2300/SmartPos";
 
 	private DBContror dbcon = null;
 
@@ -173,6 +175,7 @@ public class POSService extends Service
 								login_Password));
 
 						//http://192.168.200.239:8080/SmartPos/clients/clientsLogin.action?loginName=admin@admin&passWord=123456 
+						//new : 58.61.149.122
 						login("http://" + serverAddress
 								+ "/clients/clientsLogin.action?", parameter);
 					}

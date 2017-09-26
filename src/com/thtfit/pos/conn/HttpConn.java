@@ -32,8 +32,8 @@ public class HttpConn {
 			connection.setDoInput(true);
 			connection.setRequestMethod("POST");
 			connection.setUseCaches(false);
-			connection.setConnectTimeout(90000);
-			connection.setReadTimeout(90000);
+			connection.setConnectTimeout(6000);
+			connection.setReadTimeout(6000);
 			// HttpURLConnection.setFollowRedirects(true);connection.connect();
 			connection.setInstanceFollowRedirects(false);
 			connection.setRequestProperty("Content-Type",
